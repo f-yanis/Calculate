@@ -1,5 +1,22 @@
+import java.io.*;
+
 /**
- * Created by yanis on 06.06.17.
+ * Этот класс считывает с консоли строку
  */
+
 public class UserWrite {
+
+    //Метод принимает текст с описанием действия пользователя, считывает строку и возвращает ее.
+    public static String writeString(String text) {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String string = null;
+        System.out.print(text);
+        try {
+            string = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return string;
+    }
 }
